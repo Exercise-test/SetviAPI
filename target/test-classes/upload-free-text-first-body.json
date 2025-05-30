@@ -1,0 +1,8 @@
+{
+  "text": "Choice 24' x 18' x 1/2' Green Polyethylene Cutting Board",
+  "topK": 3,
+  "threshold": 0.8,
+  "enablePrivateLabelRanking": false,
+  "enableStockProductRanking": false,
+  "enableVendorRanking": false
+}

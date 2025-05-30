@@ -1,0 +1,8 @@
+{
+  "url": "https://www.webstaurantstore.com/choice-4-qt-white-square-polypropylene-food-storage-container-and-green-lid-pack/176SQWH4KT6.html",
+  "topK": 3,
+  "threshold": 0.8,
+  "enablePrivateLabelRanking": false,
+  "enableStockProductRanking": false,
+  "enableVendorRanking": false
+}

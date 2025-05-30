@@ -1,0 +1,8 @@
+{
+  "url": "https://www.webstaurantstore.com/choice-24-x-18-x-1-2-green-polyethylene-cutting-board/40724185GN.html",
+  "topK": 3,
+  "threshold": 0.8,
+  "enablePrivateLabelRanking": false,
+  "enableStockProductRanking": false,
+  "enableVendorRanking": false
+}

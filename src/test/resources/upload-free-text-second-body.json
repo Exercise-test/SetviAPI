@@ -1,0 +1,8 @@
+{
+  "text": "Choice 4 Qt. White Square Polypropylene Food Storage Container and Green Lid - 6/Pack",
+  "topK": 3,
+  "threshold": 0.5,
+  "enablePrivateLabelRanking": false,
+  "enableStockProductRanking": false,
+  "enableVendorRanking": false
+}
