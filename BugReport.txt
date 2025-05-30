@@ -1,0 +1,128 @@
+Bug: No Match on Valid Cutting Board Free Text
+ENV: e.g. :) DEV https://intelligence-dev.setvi.com
+Steps to Reproduce:
+1.	POST /api/rfq/upload-free-text
+2.	Body: 'Choice 24" x 18" x 1/2" Green Polyethylene Cutting Board'
+Actual Result:
+Response 200 OK, but matched item list is incorrect or missing
+Expected Result:
+Response 200 OK with a matched product including "cutting board"
+Severity: Low
+Priority: High
+
+
+Bug: Missing '4 Qt' in Matched Result
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-free-text
+2.	Body: 'Choice 4 Qt. White Square Polypropylene Food Storage Container'
+Actual Result:
+Response 200 OK with match, but without "4 qt" clearly identified
+Expected Result:
+Response 200 OK with match explicitly containing "4 qt"
+Severity: Low
+Priority: High
+
+
+Bug: Match Missing 'Cutting Board' on Valid URL
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-url-html
+2.	URL: …/40724185GN.html
+Actual Result:
+Response 200 OK with a product match, but missing "cutting board" reference
+Expected Result:
+200 OK with matched product clearly including "cutting board"
+Severity: Low
+Priority: Medium
+
+
+Bug: Match Missing '4 Qt' Reference from URL
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-url-html
+2.	URL: …/176SQWH4KT6.html
+Actual Result:
+Response 200 OK with match, but lacks confidence score or "4 qt" label
+Expected Result:
+200 OK with product match including "4 qt" and confidence score
+Severity: Low
+Priority: Medium
+
+
+Bug: Missing Confidence Score in Match Response
+Environment: DEV
+Steps to Reproduce:
+1.	POST known product to API
+2.	Check response fields
+Actual Result:
+Response does not include percentage confidence field
+Expected Result:
+Each matched product includes a confidence score (e.g. 87%)
+Severity: Low
+Priority: Medium
+
+
+Bug: Server Error on Empty Free Text Input
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-free-text
+2.	Body: {}
+Actual Result:
+500 Internal Server Error
+Expected Result:
+400 Bad Request or validation error
+Severity: High
+Priority: High
+
+
+Bug: Invalid URL Accepted with No Error
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-url-html
+2.	Body: 'invalid_url'
+Actual Result:
+200 OK with empty result
+Expected Result:
+400 Bad Request with meaningful error message
+Severity: Medium
+Priority: High
+
+
+Bug: 500 Error When URL Field Is Missing
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-url-html
+2.	Body: {}
+Actual Result:
+500 Internal Server Error
+Expected Result:
+400 Bad Request with missing field validation error
+Severity: High
+Priority: High
+
+
+Bug: No Validation on Numeric Free Text Input
+Environment: Staging
+Steps to Reproduce:
+1.	POST /api/rfq/upload-free-text
+2.	Body: '1234567890'
+Actual Result:
+200 OK with unclear or empty match
+Expected Result:
+Validation error or empty match list with appropriate message
+Severity: Medium
+Priority: Medium
+
+
+Bug: Very Long Free Text Not Rejected
+Environment: DEV
+Steps to Reproduce:
+1.	POST /api/rfq/upload-free-text
+2.	Body: long text >10,000 characters
+Actual Result:
+200 OK, but very slow response
+Expected Result:
+400 Bad Request or rejected with length validation
+Severity: Medium
+Priority: Low
